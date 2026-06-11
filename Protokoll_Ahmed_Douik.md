@@ -1,4 +1,4 @@
-# Protokoll – EPICS aSub SCAN Übungsaufgabe
+wenige mswenige ms# Protokoll – EPICS aSub SCAN Übungsaufgabe
 
 **Name:** Ahmed Douik  
 **Matrikelnummer:** 108335  
@@ -27,20 +27,17 @@ Aus den Zeitstempeln der camonitor-Aufzeichnung wurden die Zeitabstände zwische
 |-----------------------------|------------|
 | Sollperiode                 | 2,000 s    |
 | Gemessene mittlere Periode  | ca. 2,000 s |
-| Maximale Abweichung         | < 5 ms     |
-| Jitter                      | ca. ±2 ms  |
+| Maximale Abweichung         | wenige ms     |
+| Jitter                      | gering   |
 
 Die Messwerte zeigen eine regelmäßige Aktualisierung im Abstand von etwa 2 Sekunden. Die gemessene mittlere Periode entspricht damit dem konfigurierten SCAN-Wert.
 
 ---
 
 ## 3. Diskussion
+Die PVs liefern gültige Werte und werden regelmäßig aktualisiert. Die Messung zeigt, dass die Aktualisierungsperiode ungefähr 2 Sekunden beträgt und damit dem konfigurierten SCAN-Wert entspricht.
 
-Kleine zeitliche Abweichungen können durch Scheduler-Jitter des Betriebssystems sowie durch den Overhead von EPICS Channel Access entstehen.
-
-Der EPICS-Timer wird durch den Betriebssystem-Scheduler ausgeführt. Dadurch können geringe Verzögerungen im Millisekundenbereich auftreten. Zusätzlich verursacht die Übertragung der Daten über Channel Access einen kleinen Kommunikations-Overhead.
-
-Die gemessenen Abweichungen sind sehr gering und für diese Anwendung unkritisch. Der IOC arbeitet stabil und liefert plausible Werte für alle erzeugten PVs.
+Der IOC arbeitet korrekt und die erzeugten PVs können mit caget und camonitor überwacht werden.
 
 ---
 
